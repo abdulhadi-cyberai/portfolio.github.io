@@ -1,51 +1,32 @@
+/* Custom font import for Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    /* Light gray background */
+    color: #334155;
+    /* Darker text color */
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
+/* Custom styles for the mobile menu toggle */
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #334155;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+.hamburger-menu.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-h1, h2, h3 {
-    color: #333;
-}
-
-section {
-    padding: 20px;
-    margin: 20px;
-}
-
-.project-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 10px 0;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
+.hamburger-menu.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
