@@ -3,80 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextLayer Technologies</title>
+    <title>Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="logo-section">
-            <img src="NextLayer Technologies.png" alt="Company Logo" class="logo">
-            <h1>NextLayer Technologies</h1>
-        </div>
-
-        <nav class="desktop-nav">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+        <nav>
+            <div class="logo">Jm</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Experience</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </nav>
-
-        <button id="mobile-menu-button" class="hamburger-menu">☰</button>
     </header>
 
-    <!-- Mobile Menu -->
-    <nav id="mobile-menu" class="mobile-nav hidden">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <!-- Main Content -->
     <main>
-        <!-- About Section -->
-        <section id="about" class="section-box">
-            <div class="about-text">
-                <h2>Hello, I'm <span class="highlight">Abdul Hadi</span></h2>
-                <p>Welcome to my IT business portfolio! I specialize in web development, cloud solutions, and data analytics...</p>
-                <button>Learn More About Me</button>
-            </div>
-            <div class="about-img">
-                <img src="My Picture.png" alt="Abdul Hadi">
+        <section id="hero">
+            <img src="Linkedin final PP_upscayl_4x_ultrasharp.png" alt="Profile Picture" class="profile-pic">
+            <h1>I do code and <br>make content <span class="highlight">about it!</span></h1>
+            <p>I am a seasoned full-stack software engineer with over<br> 8 years of experience in designing and developing web applications. My <br>expertise lies in crafting robust and scalable back-ends <br>and intuitive front-end user experiences.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Get In Touch</button>
+                <button class="btn-secondary">Download CV</button>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section-box">
-            <h2>My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>E-commerce Platform Redesign</h3>
-                    <p>Built a responsive e-commerce site using React and Node.js.</p>
-                    <a href="#">View Project →</a>
+        <section id="experience-with">
+            <h2>EXPERIENCE WITH</h2>
+            <div class="tech-icons">
+                <i class="fab fa-js-square"></i>
+                <i class="fab fa-node-js"></i>
+                <i class="fab fa-react"></i>
+                <i class="fab fa-angular"></i>
+                <i class="fab fa-slack"></i>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>PROJECTS</h2>
+            <div class="project-cards">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x150/ff6347/fff?text=Project+G" alt="Project G">
+                    <div class="card-content">
+                        <p>CLICK HERE TO VIST</p>
+                        <h3>POWER OF HTML <span class="arrow">↗</span></h3>
+                        <p>HTML TUTORIAL</p>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Cloud-Based Analytics Dashboard</h3>
-                    <p>Implemented a live dashboard on AWS for business insights.</p>
-                    <a href="#">View Project →</a>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x150/1e90ff/fff?text=Project+CSS" alt="Project CSS Magic">
+                     <div class="card-content">
+                        <p>CLICK HERE TO VIST</p>
+                        <h3>UNLOCK CSS MAGIC <span class="arrow">↗</span></h3>
+                        <p>CSS TUTORIAL</p>
+                    </div>
                 </div>
-                <!-- Add more project cards as needed -->
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>EXPERIENCE</h2>
+            <div class="experience-item">
+                <div class="experience-icon google">
+                    <i class="fab fa-google"></i>
+                </div>
+                <div class="experience-details">
+                    <h3>Lead Software Engineer at Google</h3>
+                    <p class="date">Nov 2019 - Present</p>
+                    <p>As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core products. My responsibilities included leading a team of engineers, architecting scalable systems, and driving technical strategy. I contributed to projects that impacted millions of users worldwide.</p>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-icon apple">
+                    <i class="fab fa-apple"></i>
+                </div>
+                <div class="experience-details">
+                    <h3>Junior Software Engineer at Apple</h3>
+                    <p class="date">Jan 2018 - Dec 2017</p> <p>During my tenure at Apple, I held the role of Software Architect, where I played a key role in shaping the technical direction of various projects. With a strong focus on designing scalable and efficient systems, I provided technical leadership to a cross-functional team.</p>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-icon meta">
+                    <i class="fab fa-meta"></i>
+                </div>
+                <div class="experience-details">
+                    <h3>Software Engineer at Meta</h3>
+                    <p class="date">Jan 2017 - Oct 2019</p>
+                    <p>At Meta, I served as a Software Engineer, contributing to the design and implementation of features for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I honed my expertise in agile development methodologies and scalability.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Seasoned Full Stack Software Engineer with over 8 years of hands-on experience in designing and developing innovative web applications. Proven expertise in architecting and managing a comprehensive skill set encompassing front-end and back-end technologies.</p>
+            <p class="email"><i class="fas fa-envelope"></i> youremail@gmail.com</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 NextLayer Technologies. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+        </footer>
 </body>
 </html>
