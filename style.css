@@ -1,111 +1,360 @@
-/* General */
 body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
 }
 
-/* Header */
 header {
+    background-color: #1e1e1e;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ccc;
-    position: relative;
-}
-.logo-section {
-    display: flex;
-    align-items: center;
-}
-.logo {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-.desktop-nav a,
-.mobile-nav a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 10px;
-}
-.desktop-nav {
-    display: none;
-}
-.hamburger-menu {
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-.mobile-nav {
-    background: white;
-    padding: 10px 20px;
-    display: none;
-    flex-direction: column;
-}
-.mobile-nav a {
-    margin: 10px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Section */
-.section-box {
-    background: white;
-    margin: 20px auto;
-    padding: 20px;
+nav .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #c0c0c0;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+main {
+    padding-top: 80px; /* Adjust based on header height */
     max-width: 1000px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-.about-text {
-    margin-bottom: 20px;
-}
-.about-img img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-}
-.highlight {
-    color: #4F46E5;
-}
-.projects-grid {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 1fr;
-}
-.project-card {
-    background: #f9f9f9;
-    padding: 15px;
-    border: 1px solid #ddd;
+
+#hero {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #1a1a1a;
+    margin-top: 20px; /* Space below fixed header */
     border-radius: 8px;
 }
 
-/* Footer */
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-.footer-links a {
-    color: #aaa;
-    margin: 0 10px;
-    text-decoration: none;
-}
-.footer-links a:hover {
-    color: white;
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #333;
+    margin-bottom: 20px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
-/* Media Queries */
-@media(min-width: 768px) {
-    .desktop-nav {
-        display: flex;
+#hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.5em;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+#hero h1 .highlight {
+    color: #bb86fc; /* A vibrant purple, adjust as needed */
+}
+
+#hero p {
+    font-size: 1.1em;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+}
+
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #bb86fc;
+    color: #121212;
+}
+
+.btn-primary:hover {
+    background-color: #a775e8;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #bb86fc;
+    border: 1px solid #bb86fc;
+}
+
+.btn-secondary:hover {
+    background-color: #bb86fc;
+    color: #121212;
+}
+
+#experience-with {
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 40px;
+}
+
+#experience-with h2 {
+    font-size: 1.2em;
+    color: #c0c0c0;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.tech-icons i {
+    font-size: 3em;
+    color: #7f8c8d; /* Muted icon color */
+    transition: color 0.3s ease;
+}
+
+.tech-icons i:hover {
+    color: #bb86fc;
+}
+
+#projects, #experience, #contact {
+    padding: 50px 0;
+    margin-top: 30px;
+}
+
+#projects h2, #experience h2, #contact h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+#projects h2::after, #experience h2::after, #contact h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #bb86fc;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+.project-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    width: calc(50% - 20px); /* Adjust for 2 cards per row, considering gap */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-content p:first-child {
+    font-size: 0.8em;
+    color: #a0a0a0;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.card-content h3 {
+    font-size: 1.4em;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.card-content h3 .arrow {
+    color: #bb86fc;
+    margin-left: 5px;
+}
+
+.card-content p:last-child {
+    font-size: 0.9em;
+    color: #b0b0b0;
+}
+
+.experience-item {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    background-color: #1e1e1e;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.experience-icon {
+    font-size: 2.5em;
+    margin-right: 25px;
+    padding-top: 5px; /* Align icon better with text */
+}
+
+.experience-icon.google i { color: #4285F4; }
+.experience-icon.apple i { color: #c0c0c0; } /* Using a neutral color for Apple as it's often white/silver */
+.experience-icon.meta i { color: #1877F2; } /* Facebook/Meta blue */
+
+
+.experience-details h3 {
+    font-size: 1.3em;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.experience-details .date {
+    font-size: 0.9em;
+    color: #a0a0a0;
+    margin-bottom: 10px;
+}
+
+.experience-details p {
+    font-size: 1em;
+    color: #b0b0b0;
+    margin-bottom: 0;
+}
+
+#contact {
+    text-align: center;
+    background-color: #1e1e1e;
+    padding: 40px 20px;
+    border-radius: 8px;
+}
+
+#contact p {
+    font-size: 1em;
+    color: #b0b0b0;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+
+#contact .email {
+    font-size: 1.1em;
+    color: #bb86fc;
+    margin-bottom: 30px;
+}
+
+#contact .email i {
+    margin-right: 8px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #c0c0c0;
+    font-size: 1.8em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #bb86fc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Or implement a mobile menu toggle */
     }
-    .hamburger-menu,
-    .mobile-nav {
-        display: none;
+    nav .logo {
+        margin: 0 auto; /* Center logo if nav items are hidden */
     }
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+    #hero h1 {
+        font-size: 2.2em;
+    }
+    #hero p {
+        font-size: 1em;
+    }
+    .project-cards .card {
+        width: calc(100% - 20px); /* Full width on smaller screens */
+    }
+    .experience-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .experience-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 1.8em;
+    }
+    .hero-buttons button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+    .tech-icons {
+        flex-wrap: wrap; /* Allow icons to wrap on very small screens */
+        gap: 20px;
+    }
+    .tech-icons i {
+        font-size: 2.5em;
     }
 }
