@@ -3,48 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Your IT Business Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
-            </ul>
+<body class="flex flex-col min-h-screen">
+    <header class="bg-white shadow-md py-4 px-6 md:px-10 flex items-center justify-between rounded-b-lg">
+        <div class="flex items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition duration-300">
+                <img src="NextLayer Technologies.png" alt="Company Logo" class="h-10 w-10 mr-2 rounded-full inline-block">
+                NextLayer Technologies
+            </a>
+        </div>
+
+        <nav class="hidden md:flex space-x-6">
+            <a href="#home" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300 px-3 py-2 rounded-md">Home</a>
+            <a href="#about" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300 px-3 py-2 rounded-md">About</a>
+            <a href="#services" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300 px-3 py-2 rounded-md">Services</a>
+            <a href="#projects" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300 px-3 py-2 rounded-md">Projects</a>
+            <a href="#contact" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300 px-3 py-2 rounded-md">Contact</a>
         </nav>
+
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="hamburger-menu focus:outline-none">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
 
-    <section id="about">
-        <h1>Hello, I'm Abdul Hadi</h1>
-        <p>I’m a passionate developer specializing in web development, AI, and more. Welcome to my portfolio.</p>
-    </section>
+    <nav id="mobile-menu" class="hidden md:hidden bg-white shadow-md py-4 px-6 rounded-b-lg">
+        <a href="#home" class="block text-gray-700 hover:text-indigo-600 font-medium py-2 px-4 rounded-md transition duration-300">Home</a>
+        <a href="#about" class="block text-gray-700 hover:text-indigo-600 font-medium py-2 px-4 rounded-md transition duration-300">About</a>
+        <a href="#services" class="block text-gray-700 hover:text-indigo-600 font-medium py-2 px-4 rounded-md transition duration-300">Services</a>
+        <a href="#projects" class="block text-gray-700 hover:text-indigo-600 font-medium py-2 px-4 rounded-md transition duration-300">Projects</a>
+        <a href="#contact" class="block text-gray-700 hover:text-indigo-600 font-medium py-2 px-4 rounded-md transition duration-300">Contact</a>
+    </nav>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Project 1: Hotel Reservation System</h3>
-            <p>A web-based hotel reservation system built using Python and PostgreSQL.</p>
-            <a href="https://github.com/abdulhadi4172/Hotel-Reservation-System" target="_blank">View on GitHub</a>
+    <main class="flex-grow container mx-auto px-6 py-10 md:py-16">
+
+        <section id="about" class="bg-white p-8 rounded-xl shadow-lg mb-12 flex flex-col md:flex-row items-center md:space-x-8">
+            <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4 leading-tight">
+                    Hello, I'm <span class="text-indigo-600">Abdul Hadi</span>
+                </h1>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Welcome to my IT business portfolio! I am a passionate and dedicated IT professional with expertise in <span class="font-semibold text-gray-700">web development, cloud solutions, and data analytics</span>. With a strong commitment to delivering innovative and efficient technological solutions, I help businesses thrive in the digital landscape. My goal is to transform complex challenges into user-friendly and scalable applications.
+                    <br><br>
+                    I specialize in creating robust web applications using modern frameworks, optimizing cloud infrastructure for performance and security, and leveraging data to drive informed business decisions. Explore my projects to see how I bring ideas to life.
+                </p>
+                <button class="mt-8 bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition duration-300 text-lg font-semibold">
+                    Learn More About Me
+                </button>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="My Picture.png" alt="Your Professional Picture" class="w-full max-w-md h-auto rounded-xl shadow-xl object-cover">
+            </div>
+        </section>
+
+        <section id="projects" class="bg-white p-8 rounded-xl shadow-lg">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-10">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-gray-200">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">E-commerce Platform Redesign</h3>
+                    <p class="text-gray-600 mb-4">
+                        Developed a responsive and user-friendly e-commerce website with enhanced product catalog management and secure payment gateway integration. Used React.js and Node.js.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:underline font-medium">View Project &rarr;</a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-gray-200">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Cloud-Based Data Analytics Dashboard</h3>
+                    <p class="text-gray-600 mb-4">
+                        Designed and implemented a real-time data analytics dashboard on AWS, providing key business insights through interactive visualizations.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:underline font-medium">View Project &rarr;</a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-gray-200">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Mobile App for Task Management</h3>
+                    <p class="text-gray-600 mb-4">
+                        Created an intuitive mobile application (iOS & Android) for efficient task organization and collaboration, featuring push notifications and offline capabilities.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:underline font-medium">View Project &rarr;</a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-gray-200">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Custom CRM System Development</h3>
+                    <p class="text-gray-600 mb-4">
+                        Built a tailored Customer Relationship Management (CRM) system to streamline sales processes, manage client interactions, and track performance.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:underline font-medium">View Project &rarr;</a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-gray-200">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Cybersecurity Audit & Implementation</h3>
+                    <p class="text-gray-600 mb-4">
+                        Conducted comprehensive security audits and implemented robust security measures to protect sensitive data and ensure compliance for a financial firm.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:underline font-medium">View Project &rarr;</a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-gray-200">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">AI-Powered Chatbot Integration</h3>
+                    <p class="text-gray-600 mb-4">
+                        Integrated an AI-driven chatbot into a customer service portal, significantly reducing response times and improving user satisfaction.
+                    </p>
+                    <a href="#" class="text-indigo-600 hover:underline font-medium">View Project &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 px-6 md:px-10 mt-12 rounded-t-lg">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+            <p class="mb-4 md:mb-0">&copy; 2025 Your IT Solutions. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                <a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact Us</a>
+            </div>
         </div>
-        <div class="project-card">
-            <h3>Project 2: None</h3>
-            <p>This Project is Unavailable or in maintenance State.</p>
-            <a href="[Your GitHub Link]" target="_blank">View on GitHub</a>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you have any questions or want to get in touch, feel free to contact me.</p>
-        <a href="mailto:abdulhadi4172@gmail.com">Send me an email</a>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Abdul Hadi. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
+    link
 </body>
 </html>
