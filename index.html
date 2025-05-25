@@ -3,123 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your IT Business Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>NextLayer Technologies</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="flex flex-col min-h-screen">
-    <header class="bg-white shadow-md py-4 px-6 md:px-10 flex items-center justify-between rounded-b-lg">
-        <div class="flex items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition duration-300">
-                <img src="NextLayer Technologies.png" alt="Company Logo" class="h-10 w-10 mr-2 rounded-full inline-block">
-                NextLayer Technologies
-            </a>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-section">
+            <img src="NextLayer Technologies.png" alt="Company Logo" class="logo">
+            <h1>NextLayer Technologies</h1>
         </div>
 
-        <nav class="hidden md:flex space-x-6">
-            <a href="#home" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300 px-3 py-2 rounded-md">Home</a>
-            <a href="#about" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300 px-3 py-2 rounded-md">About</a>
-            <a href="#services" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300 px-3 py-2 rounded-md">Services</a>
-            <a href="#projects" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300 px-3 py-2 rounded-md">Projects</a>
-            <a href="#contact" class="text-gray-700 hover:text-indigo-600 font-medium transition duration-300 px-3 py-2 rounded-md">Contact</a>
+        <nav class="desktop-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
 
-        <div class="md:hidden">
-            <button id="mobile-menu-button" class="hamburger-menu focus:outline-none">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+        <button id="mobile-menu-button" class="hamburger-menu">☰</button>
     </header>
 
-    <nav id="mobile-menu" class="hidden md:hidden bg-white shadow-md py-4 px-6 rounded-b-lg">
-        <a href="#home" class="block text-gray-700 hover:text-indigo-600 font-medium py-2 px-4 rounded-md transition duration-300">Home</a>
-        <a href="#about" class="block text-gray-700 hover:text-indigo-600 font-medium py-2 px-4 rounded-md transition duration-300">About</a>
-        <a href="#services" class="block text-gray-700 hover:text-indigo-600 font-medium py-2 px-4 rounded-md transition duration-300">Services</a>
-        <a href="#projects" class="block text-gray-700 hover:text-indigo-600 font-medium py-2 px-4 rounded-md transition duration-300">Projects</a>
-        <a href="#contact" class="block text-gray-700 hover:text-indigo-600 font-medium py-2 px-4 rounded-md transition duration-300">Contact</a>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="mobile-nav hidden">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <main class="flex-grow container mx-auto px-6 py-10 md:py-16">
-
-        <section id="about" class="bg-white p-8 rounded-xl shadow-lg mb-12 flex flex-col md:flex-row items-center md:space-x-8">
-            <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4 leading-tight">
-                    Hello, I'm <span class="text-indigo-600">Abdul Hadi</span>
-                </h1>
-                <p class="text-lg text-gray-600 leading-relaxed">
-                    Welcome to my IT business portfolio! I am a passionate and dedicated IT professional with expertise in <span class="font-semibold text-gray-700">web development, cloud solutions, and data analytics</span>. With a strong commitment to delivering innovative and efficient technological solutions, I help businesses thrive in the digital landscape. My goal is to transform complex challenges into user-friendly and scalable applications.
-                    <br><br>
-                    I specialize in creating robust web applications using modern frameworks, optimizing cloud infrastructure for performance and security, and leveraging data to drive informed business decisions. Explore my projects to see how I bring ideas to life.
-                </p>
-                <button class="mt-8 bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition duration-300 text-lg font-semibold">
-                    Learn More About Me
-                </button>
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="section-box">
+            <div class="about-text">
+                <h2>Hello, I'm <span class="highlight">Abdul Hadi</span></h2>
+                <p>Welcome to my IT business portfolio! I specialize in web development, cloud solutions, and data analytics...</p>
+                <button>Learn More About Me</button>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <img src="My Picture.png" alt="Your Professional Picture" class="w-full max-w-md h-auto rounded-xl shadow-xl object-cover">
+            <div class="about-img">
+                <img src="My Picture.png" alt="Abdul Hadi">
             </div>
         </section>
 
-        <section id="projects" class="bg-white p-8 rounded-xl shadow-lg">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-10">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-gray-200">
-                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">E-commerce Platform Redesign</h3>
-                    <p class="text-gray-600 mb-4">
-                        Developed a responsive and user-friendly e-commerce website with enhanced product catalog management and secure payment gateway integration. Used React.js and Node.js.
-                    </p>
-                    <a href="#" class="text-indigo-600 hover:underline font-medium">View Project &rarr;</a>
+        <!-- Projects Section -->
+        <section id="projects" class="section-box">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>E-commerce Platform Redesign</h3>
+                    <p>Built a responsive e-commerce site using React and Node.js.</p>
+                    <a href="#">View Project →</a>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-gray-200">
-                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Cloud-Based Data Analytics Dashboard</h3>
-                    <p class="text-gray-600 mb-4">
-                        Designed and implemented a real-time data analytics dashboard on AWS, providing key business insights through interactive visualizations.
-                    </p>
-                    <a href="#" class="text-indigo-600 hover:underline font-medium">View Project &rarr;</a>
+                <div class="project-card">
+                    <h3>Cloud-Based Analytics Dashboard</h3>
+                    <p>Implemented a live dashboard on AWS for business insights.</p>
+                    <a href="#">View Project →</a>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-gray-200">
-                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Mobile App for Task Management</h3>
-                    <p class="text-gray-600 mb-4">
-                        Created an intuitive mobile application (iOS & Android) for efficient task organization and collaboration, featuring push notifications and offline capabilities.
-                    </p>
-                    <a href="#" class="text-indigo-600 hover:underline font-medium">View Project &rarr;</a>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-gray-200">
-                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Custom CRM System Development</h3>
-                    <p class="text-gray-600 mb-4">
-                        Built a tailored Customer Relationship Management (CRM) system to streamline sales processes, manage client interactions, and track performance.
-                    </p>
-                    <a href="#" class="text-indigo-600 hover:underline font-medium">View Project &rarr;</a>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-gray-200">
-                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Cybersecurity Audit & Implementation</h3>
-                    <p class="text-gray-600 mb-4">
-                        Conducted comprehensive security audits and implemented robust security measures to protect sensitive data and ensure compliance for a financial firm.
-                    </p>
-                    <a href="#" class="text-indigo-600 hover:underline font-medium">View Project &rarr;</a>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 border border-gray-200">
-                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">AI-Powered Chatbot Integration</h3>
-                    <p class="text-gray-600 mb-4">
-                        Integrated an AI-driven chatbot into a customer service portal, significantly reducing response times and improving user satisfaction.
-                    </p>
-                    <a href="#" class="text-indigo-600 hover:underline font-medium">View Project &rarr;</a>
-                </div>
+                <!-- Add more project cards as needed -->
             </div>
         </section>
-
     </main>
 
-    <footer class="bg-gray-800 text-white py-8 px-6 md:px-10 mt-12 rounded-t-lg">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left">
-            <p class="mb-4 md:mb-0">&copy; 2025 NextLayer Technologies. All rights reserved.</p>
-            <div class="flex space-x-6">
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
-                <a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact Us</a>
-            </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 NextLayer Technologies. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#contact">Contact</a>
         </div>
     </footer>
 
