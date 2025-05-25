@@ -1,32 +1,111 @@
-/* Custom font import for Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
+/* General */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f8fafc;
-    /* Light gray background */
-    color: #334155;
-    /* Darker text color */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
 }
 
-/* Custom styles for the mobile menu toggle */
-.hamburger-menu span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #334155;
-    margin: 5px 0;
-    transition: all 0.3s ease-in-out;
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.desktop-nav a,
+.mobile-nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+}
+.desktop-nav {
+    display: none;
+}
+.hamburger-menu {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.mobile-nav {
+    background: white;
+    padding: 10px 20px;
+    display: none;
+    flex-direction: column;
+}
+.mobile-nav a {
+    margin: 10px 0;
 }
 
-.hamburger-menu.open span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
+/* Section */
+.section-box {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1000px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.about-text {
+    margin-bottom: 20px;
+}
+.about-img img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+.highlight {
+    color: #4F46E5;
+}
+.projects-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+.project-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
 }
 
-.hamburger-menu.open span:nth-child(2) {
-    opacity: 0;
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.footer-links a {
+    color: #aaa;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.footer-links a:hover {
+    color: white;
 }
 
-.hamburger-menu.open span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
+/* Media Queries */
+@media(min-width: 768px) {
+    .desktop-nav {
+        display: flex;
+    }
+    .hamburger-menu,
+    .mobile-nav {
+        display: none;
+    }
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
