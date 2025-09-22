@@ -1,201 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantrix</title>
+    <title>Abdul Hadi</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for icons (optional, but nice) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- AOS Library for scroll animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
-        <nav class="container">
-            <a href="#" class="logo">Abdul Hadi</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact" class="cta-nav">Contact Us</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger-menu" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
+        <nav>
+            <div class="left">Abdul's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Services</a></li>
+                    <li><a href="/">Projects</a></li>
+                    <li><a href="/">Contact Me</a></li>
+                </ul>
+            </div>
         </nav>
-        <div class="mobile-nav" id="mobile-nav-menu">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact Us</a>
-        </div>
     </header>
 
     <main>
-        <section id="hero">
-            <div class="container hero-content" data-aos="fade-up">
-                <h1>Innovate. Create. Elevate.</h1>
-                <p>We transform ideas into impactful digital experiences. Partner with us to bring your vision to life.</p>
-                <a href="#contact" class="btn btn-primary">Get Started</a>
-                <div class="client-logos" data-aos="fade-up" data-aos-delay="200">
-                    <span>Trusted by:</span>
-                    <i class="fab fa-google"></i>
-                    <i class="fab fa-microsoft"></i>
-                    <i class="fab fa-amazon"></i>
-                    <i class="fab fa-apple"></i>
-                </div>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi, My name is <span class="lightblue">Abdul Hadi</span>
+                <div>and I am Passionate</div>
+                <span id="element"></span>
             </div>
-            <div class="hero-background-shape"></div>
-        </section>
-
-        <section id="about" class="container section-padding">
-            <h2 data-aos="fade-right">About Us</h2>
-            <div class="about-content" data-aos="fade-left">
-                <img src="https://via.placeholder.com/400x300.png?text=Our+Team" alt="Our Team Working" class="about-image" data-aos="zoom-in">
-                <div>
-                    <h3>Driving Success Through Expertise</h3>
-                    <p>We are a passionate team of strategists, designers, and developers dedicated to delivering exceptional results. With over a decade of experience, we understand the nuances of the digital landscape and leverage cutting-edge technology to help businesses thrive.</p>
-                    <p>Our core values are innovation, collaboration, and client satisfaction. We believe in building long-term partnerships.</p>
-                </div>
+            <div class="rightSection">
+                <img src="bg.png" alt="">
             </div>
         </section>
 
-        <section id="services" class="section-padding">
-            <div class="container">
-                <h2 data-aos="fade-up">Our Services</h2>
-                <div class="services-grid">
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-laptop-code"></i>
-                        <h3>Web Development</h3>
-                        <p>Custom web solutions tailored to your business needs, from corporate sites to e-commerce platforms.</p>
-                    </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-palette"></i>
-                        <h3>UI/UX Design</h3>
-                        <p>Intuitive and engaging user interfaces that provide seamless user experiences.</p>
-                    </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                        <i class="fas fa-bullhorn"></i>
-                        <h3>Digital Marketing</h3>
-                        <p>Strategic marketing campaigns to boost your online presence and drive growth.</p>
-                    </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                        <i class="fas fa-cogs"></i>
-                        <h3>AI Solutions</h3>
-                        <p>Leveraging artificial intelligence to automate processes and unlock new insights.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="container section-padding">
-            <h2 data-aos="fade-up">Featured Projects</h2>
-            <div class="portfolio-grid">
-                <!-- Add 3-6 portfolio items -->
-                <div class="portfolio-item" data-aos="zoom-in-up">
-                    <img src="https://via.placeholder.com/400x300.png?text=Project+Alpha" alt="Project Alpha">
-                    <div class="portfolio-info">
-                        <h3>Project Alpha</h3>
-                        <p>Web Application</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-aos="zoom-in-up" data-aos-delay="100">
-                    <img src="https://via.placeholder.com/400x300.png?text=Project+Beta" alt="Project Beta">
-                    <div class="portfolio-info">
-                        <h3>Project Beta</h3>
-                        <p>Mobile App Design</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-aos="zoom-in-up" data-aos-delay="200">
-                    <img src="https://via.placeholder.com/400x300.png?text=Project+Gamma" alt="Project Gamma">
-                    <div class="portfolio-info">
-                        <h3>Project Gamma</h3>
-                        <p>E-commerce Solution</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="section-padding">
-            <div class="container">
-                <h2 data-aos="fade-up">What Our Clients Say</h2>
-                <div class="testimonial-slider" data-aos="fade-up" data-aos-delay="100">
-                    <!-- Testimonial items will be injected by JS or can be static -->
-                    <div class="testimonial-item active">
-                        <img src="https://via.placeholder.com/80.png?text=Client+1" alt="Client 1" class="testimonial-avatar">
-                        <p>"Working with YourBrand has been a game-changer for our business. Their expertise and dedication are unparalleled."</p>
-                        <h4>- Jane Doe, CEO of TechCorp</h4>
-                    </div>
-                    <div class="testimonial-item">
-                        <img src="https://via.placeholder.com/80.png?text=Client+2" alt="Client 2" class="testimonial-avatar">
-                        <p>"The team delivered an outstanding product on time and on budget. Highly recommended!"</p>
-                        <h4>- John Smith, Founder of InnovateX</h4>
-                    </div>
-                    <!-- Add more if you want, JS will handle cycling -->
-                    <div class="testimonial-nav">
-                        <button id="prev-testimonial" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-                        <button id="next-testimonial" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="container section-padding">
-            <h2 data-aos="fade-up">Get In Touch</h2>
-            <form class="contact-form" data-aos="fade-up" data-aos-delay="100">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
+        <section class="secondSection">
+            
         </section>
     </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h3>YourBrand</h3>
-                    <p>Innovate. Create. Elevate. <br> Your partner in digital transformation.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Connect With Us</h4>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <p class="copyright">© 2024 Quantrix. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
-
-
-
-
