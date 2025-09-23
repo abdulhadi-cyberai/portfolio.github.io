@@ -9,12 +9,14 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+/* Header CSS */
 nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 70px;
-    background-color: #DADFE4;
+    /* background-color: #DADFE4; */
+    background-color: #64A9EE;
 }
 
 nav ul {
@@ -33,20 +35,22 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #64a9ee;
+    /* color: #64a9ee; */
+    color: #FAFAFA;
     /* font-size: 1.01rem; */
-    transition: 0.12s;
+    transition: 0.15s;
 }
 
 .left {
     font-size: 1.5rem;
 }
 
+/* Main CSS */
 .firstSection {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 80px 0;
+    margin: 30px 0;
 }
 
 .firstSection>div {
@@ -57,14 +61,6 @@ nav ul li a:hover {
     font-size: 2rem;
 }
 
-.rightSection img {
-    width: 77%;
-    border-radius: 10px;
-    /* border: 5px solid red; */
-    background-color: #DADFE4;
-     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
 .lightblue {
     color: #64a9ee;
 }
@@ -73,11 +69,106 @@ nav ul li a:hover {
     color: #64a9ee;
 }
 
-.secondSection{
-    max-width: 80vw;
-    margin: auto;
+.leftSection .buttons{
+    padding: 50px 0;
 }
 
-.secondSection h1{
-    font-size: 2rem;
+.leftSection .btn {
+    padding: 12px;
+    background: #64a9ee;
+    color: white;
+    border: 2px solid #000000;
+    border-radius: 9px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.rightSection img {
+    width: 70%;
+    border-radius: 10px;
+    /* border: 5px solid red; */
+    background-color: #DADFE4;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+main hr {
+    border: 0;
+    background-color: #DADFE4;
+    height: 1.2px;
+    margin: 40px 84px;
+}
+
+.secondSection {
+    max-width: 80vw;
+    margin: auto;
+    height: 80vh;
+}
+
+.text-gray {
+    color: gray;
+}
+
+.secondSection h1 {
+    font-size: 1.9rem;
+}
+
+.secondSection .box {
+    background: #DADFE4;
+    width: 77vw;
+    height: 2px;
+    margin: 56px 0;
+    display: flex;
+}
+
+.secondSection .vertical {
+    height: 93px;
+    width: 1px;
+    background-color: #DADFE4;
+    margin: 0 135px;
+}
+
+.image-top {
+    width: 23px;
+    position: relative;
+    top: -24.8px;
+    left: -11px;
+}
+
+.vertical-title {
+    position: relative;
+    top: 63px;
+    width: 150px;
+}
+
+.vertical-desc {
+    position: relative;
+    top: 70px;
+    color: #010203;
+    width: 167px;
+    font-size: 11px;
+}
+
+footer {
+    background-color: #64A9EE;
+    /* height: 233px; */
+}
+
+.footer {
+    display: flex;
+    padding: 23px 122px;
+    justify-content: space-evenly;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer>div {
+    width: 223px;
+}
+
+footer .footer-rights {
+    text-align: center;
+    color: rgb(255, 255, 255, 0.8);
+    padding: 12px 0;
 }
