@@ -1,13 +1,15 @@
-// script.js
+// script.js (Updated)
 
 document.addEventListener("DOMContentLoaded", function() {
     
     // Typed.js for the hero section
     if (document.querySelector("#typed-element")) {
         var options = {
-            strings: ['Cybersecurity Specialist', 'AI & ML Enthusiast', 'Data Scientist'],
-            typeSpeed: 50,
-            backSpeed: 25,
+            // UPDATED the string to fix the '&' symbol issue
+            strings: ['Cybersecurity Specialist', 'AI &amp; ML Enthusiast', 'Data Scientist'],
+            typeSpeed: 70,
+            backSpeed: 35,
+            smartBackspace: true,
             loop: true
         };
         var typed = new Typed('#typed-element', options);
