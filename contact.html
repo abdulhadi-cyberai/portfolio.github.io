@@ -1,28 +1,24 @@
-<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Abdul Hadi - Learn about my journey into Cybersecurity and AI, my education, and my skills.">
-    <meta name="keywords" content="About Abdul Hadi, Skills, Education, Computer Systems Engineering">
-    <title>About Me | Abdul Hadi</title>
+    <meta name="description" content="Contact Abdul Hadi for collaborations, services, or inquiries. Get in touch via email or the contact form.">
+    <meta name="keywords" content="Contact Abdul Hadi, Hire Cybersecurity Expert, AI Developer">
+    <title>Contact Me | Abdul Hadi</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="navbar container">
             <a href="index.html" class="nav-logo">Abdul Hadi</a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
             </ul>
             <div class="nav-toggle">
                 <i class="fas fa-bars"></i>
@@ -31,71 +27,51 @@
     </header>
 
     <main>
-        <!-- About Section -->
-        <section class="about">
+        <section class="contact">
             <div class="container">
-                <h1 class="section-title">About Me</h1>
-                <p class="section-subtitle">My journey, my passion, and my skills.</p>
-                <div class="about-container">
-                    <div class="about-content">
-                        <h3>Who I Am</h3>
-                        <p>
-                            I am Abdul Hadi, a dedicated and forward-thinking student pursuing a BSc (Hons) in Computer Systems Engineering. My passion lies at the intersection of security and intelligence—specifically in the fields of Cybersecurity, Artificial Intelligence, and Machine Learning. I am driven by a desire to build secure, smart, and efficient technological solutions to solve real-world problems.
-                        </p>
-                        <p>
-                            My academic journey at the University of Sunderland is providing me with a strong foundation in IT, while my personal projects and continuous learning are helping me specialize in my areas of interest. I thrive on challenges and am constantly exploring new technologies to expand my skillset.
-                        </p>
-                        <div class="about-info">
-                            <div class="info-item"><span>Name:</span> Abdul Hadi</div>
-                            <div class="info-item"><span>Email:</span> abdul@abdulhadi.com.np</div>
-                            <div class="info-item"><span>Study:</span> University of Sunderland, UK</div>
-                            <div class="info-item"><span>Degree:</span> BSc Computer Systems Engineering</div>
+                <h1 class="section-title">Contact Me</h1>
+                <p class="section-subtitle">Have a question or want to work together? Feel free to reach out. I'd love to hear from you!</p>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <div class="icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>abdul@abdulhadi.com.np</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="icon"><i class="fab fa-linkedin"></i></div>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p>linkedin.com/in/abdulhadi-cyberai</p>
+                            </div>
+                        </div>
+                         <div class="contact-info-item">
+                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Kathmandu, Bagmati, Nepal</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="about-image">
-                        <!-- This is the HTML for the LinkedIn Badge -->
-                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="abdulhadi-cyberai" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://np.linkedin.com/in/abdulhadi-cyberai?trk=profile-badge">Abdul Hadi</a></div>
-                    </div>
+                    <form action="https://formspree.io/f/xanpjrvg" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
                 </div>
             </div>
         </section>
-
-        <!-- Certifications Section -->
-        <section class="certifications">
-            <div class="container">
-                <h1 class="section-title">Certifications & Learning</h1>
-                <p class="section-subtitle">My commitment to continuous learning and professional development.</p>
-                <div class="certification-card">
-                    <div class="cert-header">
-                        <img src="google-logo.png" alt="Google Logo" class="cert-logo">
-                        <div class="cert-title">
-                            <h3>Foundations of Cybersecurity</h3>
-                            <p>Issued by Google | Coursera &bull; Sep 2025</p>
-                        </div>
-                    </div>
-                    <div class="cert-body">
-                        <p>A comprehensive course covering the core concepts of cybersecurity. I gained hands-on experience with security controls, network analysis, SIEM tools, and incident response protocols.</p>
-                        <h4>Skills Learned:</h4>
-                        <div class="cert-skills">
-                            <span class="tech-tag">Cybersecurity</span>
-                            <span class="tech-tag">SIEM</span>
-                            <span class="tech-tag">Incident Response</span>
-                            <span class="tech-tag">Network Analysis</span>
-                            <span class="tech-tag">Cyber Risk</span>
-                            <span class="tech-tag">Security Controls</span>
-                            <span class="tech-tag">Data Ethics</span>
-                        </div>
-                    </div>
-                    <div class="cert-footer">
-                        <a href="https://coursera.org/verify/IAN3NDFUVZUR" target="_blank" class="btn btn-secondary">Verify Certificate</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-socials">
@@ -105,10 +81,6 @@
             <p class="copyright">Copyright &copy; 2025 Abdul Hadi | All rights reserved.</p>
         </div>
     </footer>
-    
-    <!-- This is the script from LinkedIn that creates the badge -->
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
