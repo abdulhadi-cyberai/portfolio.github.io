@@ -36,3 +36,22 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+
+// Contact Form Submission Logic
+const form = document.getElementById("contactForm");
+    const status = document.getElementById("status");
+
+    // Check if the user has already submitted today
+    const lastSubmit = localStorage.getItem("lastSubmit");
+    const today = new Date().toDateString();
+
+    if (lastSubmit === today) {
+      form.style.display = "none";
+      status.textContent =
+        "You’ve already submitted today. Please come back tomorrow!";
+    }
+
+    form.addEventListener("submit", (e) => {
+      // When user submits
+      localStorage.setItem("lastSubmit", today); // save today's date
+    });
