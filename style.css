@@ -178,7 +178,7 @@ section {
 
 .typed-wrapper {
     display: inline-block;
-    min-width: 450px; 
+    min-width: 450px;
 }
 
 #typed-element {
@@ -192,10 +192,9 @@ section {
     gap: 1rem;
 }
 
-/* --- UPDATED BUTTON STYLES --- */
 .btn {
     padding: 0.8rem 1.8rem;
-    border-radius: 8px; 
+    border-radius: 8px;
     font-weight: 600;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -210,26 +209,24 @@ section {
     box-shadow: 0 4px 15px rgba(54, 113, 233, 0.4);
 }
 
-/* NEW Hover effect for Primary button */
 .btn-primary:hover {
     background-color: transparent;
     color: var(--primary-color);
-    transform: translateY(-3px); 
+    transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(54, 113, 233, 0.5);
 }
 
 .btn-secondary {
     background-color: var(--primary-color);
     color: #fff;
+    box-shadow: 0 4px 15px rgba(54, 113, 233, 0.4);
 }
 
-/* UPDATED Hover effect for Secondary button to fix text visibility */
 .btn-secondary:hover {
     background-color: transparent;
     color: var(--primary-color);
-    transform: translateY(-3px); 
-    box-shadow: 0 6px 20px rgba(54, 113, 233, 0.5);
     transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(54, 113, 233, 0.5);
 }
 
 .hero-image {
@@ -466,6 +463,74 @@ section {
     font-size: 0.9rem;
 }
 
+/* --- NEW CERTIFICATIONS SECTION STYLES --- */
+.certification-card {
+    background-color: var(--surface-color);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.certification-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.cert-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #333;
+}
+
+.cert-logo {
+    width: 60px;
+    height: 60px;
+}
+
+.cert-title h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.cert-title p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.cert-body {
+    padding: 1.5rem 0;
+}
+
+.cert-body p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.cert-body h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.cert-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.cert-footer {
+    text-align: right;
+    padding-top: 1rem;
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
     .nav-toggle {
@@ -489,7 +554,7 @@ section {
     .nav-menu.active {
         right: 0;
     }
-    
+
     .hero-container {
         flex-direction: column-reverse;
         text-align: center;
@@ -501,7 +566,7 @@ section {
     }
 
     .typed-wrapper {
-       min-width: unset; 
+       min-width: unset;
     }
 
     .about-container, .contact-container {
@@ -513,7 +578,7 @@ section {
     .hero-content h1 {
         font-size: 2.8rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
@@ -524,5 +589,15 @@ section {
 
     .nav-menu {
         width: 80%;
+    }
+
+    .cert-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .cert-footer {
+        text-align: center;
     }
 }
