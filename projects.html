@@ -109,10 +109,10 @@
     <script>
 /* ---------------- Helper Functions ---------------- */
 function getBrowserName(userAgent) {
+  if(userAgent.includes("Edge") || userAgent.includes("Edg/")) return "Edge";  // check Edge first
   if(userAgent.includes("Chrome")) return "Chrome";
   if(userAgent.includes("Firefox")) return "Firefox";
   if(userAgent.includes("Safari") && !userAgent.includes("Chrome")) return "Safari";
-  if(userAgent.includes("Edge")) return "Edge";
   return "Other";
 }
 
@@ -163,6 +163,7 @@ function getDeviceType(userAgent) {
 </body>
 
 </html>
+
 
 
 
