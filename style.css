@@ -552,6 +552,8 @@ section {
 }
 
 /* --- Responsive Design --- */
+
+/* Tab View */
 @media (max-width: 992px) {
     .nav-toggle {
         display: block;
@@ -582,7 +584,6 @@ section {
     }
 
     .hero-buttons {
-        flex-direction: column;
         justify-content: center;
     }
 
@@ -595,6 +596,7 @@ section {
     }
 }
 
+/* Mobile View */
 @media (max-width: 576px) {
     .hero-content h1 {
         font-size: 2.8rem;
@@ -639,4 +641,5 @@ section {
         padding: 1rem 1.5rem; /* Taller touch targets */
     }
 }
+
 
