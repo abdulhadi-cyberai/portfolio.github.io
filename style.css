@@ -635,7 +635,8 @@ section {
     .btn-secondary, 
     .btn-primary,
     .btn-linkedin {
-        width: 100%; 
+        width: 350px; 
         padding: 1rem 1.5rem; /* Taller touch targets */
     }
 }
+
