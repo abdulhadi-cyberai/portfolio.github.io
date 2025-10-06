@@ -621,4 +621,21 @@ section {
     .cert-footer {
         text-align: center;
     }
+
+    /* **CRITICAL ADDITION FOR BUTTONS** */
+    .hero-buttons {
+        /* Ensure column stacking on smallest screens, if not already done by 992px query */
+        flex-direction: column; 
+        gap: 0.8rem; /* Space between stacked buttons */
+        justify-content: center;
+    }
+    
+    /* Apply full width and padding to ALL buttons for better touch targets */
+    .btn, 
+    .btn-secondary, 
+    .btn-primary,
+    .btn-linkedin {
+        width: 100%; 
+        padding: 1rem 1.5rem; /* Taller touch targets */
+    }
 }
