@@ -99,22 +99,56 @@
   </footer>
 
   <script>
-  fetch("https://script.google.com/macros/s/AKfycbzAGG2t5PRlLb36Q9WDpgWlLOltFBRxQeBktJB1YTWgIL_QqQOzDGHB959I-6LPOnmM/exec", {
-  method: "POST",
-  body: JSON.stringify({
-  page: window.location.href,
-  userAgent: navigator.userAgent,
-  screenWidth: window.screen.width,
-  screenHeight: window.screen.height,
-  language: navigator.language
-  })
-  });
-  </script>
+    (async function() {
+    const userAgent = navigator.userAgent;
+    const browser = getBrowserName(userAgent);
+    const device = getDeviceType(userAgent);
+
+    // Fetch country from free IP API
+    let country = "Unknown";
+    try {
+    const res = await fetch('https://ipapi.co/json/');
+    const data = await res.json();
+    country = data.country_name || "Unknown";
+    } catch(e){}
+
+    const payload = {
+    page: window.location.href,
+    userAgent,
+    browser,
+    device,
+    screenWidth: window.screen.width,
+    screenHeight: window.screen.height,
+    language: navigator.language,
+    country
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbzAGG2t5PRlLb36Q9WDpgWlLOltFBRxQeBktJB1YTWgIL_QqQOzDGHB959I-6LPOnmM/exec", {
+    method: "POST",
+    body: JSON.stringify(payload)
+    });
+
+    function getBrowserName(userAgent) {
+    if(userAgent.includes("Chrome")) return "Chrome";
+    if(userAgent.includes("Firefox")) return "Firefox";
+    if(userAgent.includes("Safari") && !userAgent.includes("Chrome")) return "Safari";
+    if(userAgent.includes("Edge")) return "Edge";
+    return "Other";
+    }
+
+    function getDeviceType(userAgent) {
+    if (/Mobi|Android/i.test(userAgent)) return "Mobile";
+    if (/Tablet|iPad/i.test(userAgent)) return "Tablet";
+    return "Desktop";
+    }
+    })();
+    </script>
   
   <script src="script.js"></script>
 </body>
 
 </html>
+
 
 
 
