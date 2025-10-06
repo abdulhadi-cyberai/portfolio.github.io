@@ -64,8 +64,23 @@
             <p class="copyright">Copyright &copy; 2025 Abdul Hadi | All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+    fetch("https://script.google.com/macros/s/AKfycbzAGG2t5PRlLb36Q9WDpgWlLOltFBRxQeBktJB1YTWgIL_QqQOzDGHB959I-6LPOnmM/exec", {
+    method: "POST",
+    body: JSON.stringify({
+    page: window.location.href,
+    userAgent: navigator.userAgent,
+    screenWidth: window.screen.width,
+    screenHeight: window.screen.height,
+    language: navigator.language
+    })
+    });
+    </script>
+    
     <script src="script.js"></script>
 </body>
 
 </html>
+
 
