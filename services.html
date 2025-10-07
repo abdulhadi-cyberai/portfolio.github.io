@@ -22,6 +22,7 @@
                 <li><a href="services.html" class="nav-link active">Services</a></li>
                 <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="auth.html" id="auth-link" class="nav-link">Sign in</a></li>
             </ul>
             <div class="nav-toggle">
                 <i class="fas fa-bars"></i>
@@ -118,11 +119,64 @@ function getDeviceType(userAgent) {
 })();
 </script>
 
+<!-- Both Database & Analytics Script -->
+<script>
+(async function(){
+  const userAgent = navigator.userAgent;
+  function getBrowserName(ua){
+    if(ua.includes("Edge") || ua.includes("Edg/")) return "Edge";
+    if(ua.includes("OPR") || ua.includes("Opera")) return "Opera";
+    if(ua.includes("Chrome") && !ua.includes("Edg/")) return "Chrome";
+    if(ua.includes("Firefox")) return "Firefox";
+    if(ua.includes("Safari") && !ua.includes("Chrome")) return "Safari";
+    return "Other";
+  }
+  function getDeviceType(ua){
+    if(/Mobi|Android/i.test(ua)) return "Mobile";
+    if(/Tablet|iPad/i.test(ua)) return "Tablet";
+    return "Desktop";
+  }
+
+  const browser = getBrowserName(userAgent);
+  const device = getDeviceType(userAgent);
+  const screenResolution = `${window.screen.width}x${window.screen.height}`;
+  const language = navigator.language || "Unknown";
+  const country = await (async ()=>{
+    try {
+      const r = await fetch('https://ipwhois.app/json/');
+      const j = await r.json();
+      return j.country || "Unknown";
+    } catch(e){
+      return "Unknown";
+    }
+  })();
+  const email = localStorage.getItem('site_user_email') || "Guest";
+
+  const payload = {
+    action: "analytics",
+    page: window.location.href,
+    userAgent,
+    browser,
+    device,
+    screenResolution,
+    language,
+    country,
+    email
+  };
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbxnuP9e-oWQ8fqA7iQFrZWfjJpBUaBDiaV-mgZPNMkf-2vBEsoAtMOaEkEMQRXoYU2T/exec", { method: "POST", body: JSON.stringify(payload) });
+  } catch(e){
+    // ignore logging failures
+  }
+})();
+</script>
     
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>
+
 
 
 
