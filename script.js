@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       try {
         // IMPORTANT: Replace with your actual Web App URL
-        await fetch("https://script.google.com/macros/s/AKfycbxnuP9e-oWQ8fqA7iQFrZWfjJpBUaBDiaV-mgZPNMkf-2vBEsoAtMOaEkEMQRXoYU2T/exec", { 
+        await fetch("https://script.google.com/macros/s/AKfycbw9OKBW9joSM_4piyZ8Y0sZ54tXr21_Ir7xyiNzowYxFw48gY63Yc9VRqhUFfFIM1e4/exec", { 
             method: "POST", 
             body: JSON.stringify(payload),
             mode: 'no-cors' // Use no-cors for this type of request
@@ -157,3 +157,4 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     })();
 });
+
