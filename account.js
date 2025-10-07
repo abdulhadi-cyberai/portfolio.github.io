@@ -1,7 +1,7 @@
 // account.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxnuP9e-oWQ8fqA7iQFrZWfjJpBUaBDiaV-mgZPNMkf-2vBEsoAtMOaEkEMQRXoYU2T/exec"; // Ensure this is your correct URL
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbw9OKBW9joSM_4piyZ8Y0sZ54tXr21_Ir7xyiNzowYxFw48gY63Yc9VRqhUFfFIM1e4/exec"; // Ensure this is your correct URL
 
     const userEmail = localStorage.getItem('site_user_email');
     if (!userEmail) {
@@ -133,4 +133,5 @@ document.addEventListener('DOMContentLoaded', () => {
             this.classList.toggle('fa-eye-slash');
         });
     });
+
 });
