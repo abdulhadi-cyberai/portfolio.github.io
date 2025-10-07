@@ -1,346 +1,63 @@
-<!doctype html>
+<!-- auth.html (Updated) -->
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Sign In / Sign Up — Abdul Hadi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up | Abdul Hadi</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        /* Simple modern UI — tweak as you like */
-        :root {
-            --bg: #0f1724;
-            --card: #0b1220;
-            --accent: #0ea5ff;
-            --muted: #94a3b8;
-            --text: #e6eef8
-        }
-
-        body {
-            margin: 0;
-            font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
-            background: linear-gradient(180deg, #071129 0%, #07172a 100%);
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh
-        }
-
-        .card {
-            background: var(--card);
-            max-width: 420px;
-            width: 94%;
-            border-radius: 12px;
-            padding: 28px;
-            box-shadow: 0 8px 30px rgba(2, 6, 23, .6)
-        }
-
-        h1 {
-            margin: 0 0 6px;
-            font-size: 20px
-        }
-
-        p.sub {
-            margin: 0 0 18px;
-            color: var(--muted);
-            font-size: 14px
-        }
-
-        .tabs {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 16px
-        }
-
-        .tab {
-            flex: 1;
-            padding: 8px 10px;
-            border-radius: 8px;
-            text-align: center;
-            cursor: pointer;
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.03)
-        }
-
-        .tab.active {
-            background: linear-gradient(90deg, #04263d, #073046);
-            border: 1px solid rgba(14, 165, 255, .12);
-            box-shadow: inset 0 -3px 0 rgba(14, 165, 255, .06)
-        }
-
-        label {
-            display: block;
-            font-size: 13px;
-            margin-top: 10px;
-            color: var(--muted)
-        }
-
-        input {
-            width: 100%;
-            padding: 10px 12px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            background: rgba(255, 255, 255, 0.02);
-            color: var(--text);
-            margin-top: 6px
-        }
-
-        .row {
-            display: flex;
-            gap: 8px
-        }
-
-        .btn {
-            margin-top: 16px;
-            width: 100%;
-            padding: 10px;
-            border-radius: 10px;
-            border: none;
-            background: var(--accent);
-            color: #042027;
-            font-weight: 600;
-            cursor: pointer
-        }
-
-        .small {
-            font-size: 13px;
-            color: var(--muted);
-            margin-top: 8px;
-            text-align: center
-        }
-
-        .success {
-            color: limegreen
-        }
-    </style>
 </head>
-
 <body>
-    <header class="header">
-        <nav class="navbar container">
-            <a href="index.html" class="nav-logo">Abdul Hadi</a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="auth.html" id="auth-link" class="nav-link">Sign in</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <i class="fas fa-bars"></i>
+    <header class="header"></header> <!-- Loaded by script.js -->
+
+    <main>
+        <section class="auth">
+            <div class="container">
+                <div class="auth-card">
+                    <h1 id="title">Create your account</h1>
+                    <p class="sub">Sign up or sign in to personalize your experience.</p>
+            
+                    <div class="tabs">
+                        <div id="tabSignup" class="tab active">Sign up</div>
+                        <div id="tabLogin" class="tab">Login</div>
+                    </div>
+            
+                    <div id="formArea">
+                        <div id="nameField" class="form-group">
+                            <label for="name">Full name</label>
+                            <input id="name" type="text" placeholder="Your full name" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="username">Choose a username</label>
+                            <input id="username" type="text" placeholder="username (optional)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" placeholder="you@example.com" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="password-wrapper">
+                                <input id="password" type="password" placeholder="Enter a strong password" />
+                                <i class="fas fa-eye-slash toggle-password"></i>
+                            </div>
+                        </div>
+
+                        <button id="submitBtn" class="btn btn-primary">Create account</button>
+                        <div class="small" id="msg"></div>
+                    </div>
+                </div>
             </div>
-        </nav>
-    </header>
+        </section>
+    </main>
 
-    <div class="card">
-        <h1 id="title">Create your account</h1>
-        <p class="sub">Sign up or sign in to personalize your experience — we'll only store basic info.</p>
+    <footer class="footer"></footer> <!-- Loaded by script.js -->
 
-        <div class="tabs">
-            <div id="tabSignup" class="tab active">Sign up</div>
-            <div id="tabLogin" class="tab">Login</div>
-        </div>
-
-        <div id="formArea">
-            <!-- Signup fields -->
-            <div id="nameField">
-                <label for="name">Full name</label>
-                <input id="name" placeholder="Your full name" />
-            </div>
-
-            <label for="username">Choose a username</label>
-            <input id="username" placeholder="username (optional)" />
-
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="you@example.com" />
-
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="Enter a strong password" />
-
-            <button id="submitBtn" class="btn">Create account</button>
-            <div class="small" id="msg"></div>
-        </div>
-    </div>
-
-    <script>
-        /* ---------------- Config ---------------- */
-        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxnuP9e-oWQ8fqA7iQFrZWfjJpBUaBDiaV-mgZPNMkf-2vBEsoAtMOaEkEMQRXoYU2T/exec"; // <-- REPLACE with your Web App URL
-
-        /* ---------------- Utilities ---------------- */
-        function el(id) { return document.getElementById(id) }
-        function showMsg(text, ok = true) { const m = el('msg'); m.textContent = text; m.style.color = ok ? 'lightgreen' : '#ffb4b4' }
-
-        /* generate random salt (hex) */
-        function genSalt(len = 16) {
-            const arr = crypto.getRandomValues(new Uint8Array(len));
-            return Array.from(arr).map(b => ("0" + b.toString(16)).slice(-2)).join("");
-        }
-
-        /* hash using SHA-256 returning hex string of salt+password */
-        async function hashSalted(salt, password) {
-            const enc = new TextEncoder();
-            const data = enc.encode(salt + password);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        }
-
-        /* ---------------- UI Toggle ---------------- */
-        let mode = 'signup'; // or 'login'
-        el('tabSignup').onclick = () => setMode('signup');
-        el('tabLogin').onclick = () => setMode('login');
-
-        function setMode(m) {
-            mode = m;
-            if (m === 'signup') {
-                el('tabSignup').classList.add('active');
-                el('tabLogin').classList.remove('active');
-                el('title').textContent = 'Create your account';
-                el('nameField').style.display = 'block';
-                el('submitBtn').textContent = 'Create account';
-            } else {
-                el('tabLogin').classList.add('active');
-                el('tabSignup').classList.remove('active');
-                el('title').textContent = 'Welcome back';
-                el('nameField').style.display = 'none';
-                el('submitBtn').textContent = 'Sign in';
-            }
-        }
-        setMode('signup');
-
-        /* ---------------- Signup / Login Flows ---------------- */
-        el('submitBtn').addEventListener('click', async () => {
-            const email = el('email').value.trim().toLowerCase();
-            const password = el('password').value;
-            const name = el('name').value.trim();
-            const username = el('username').value.trim();
-
-            if (!email || !password) { showMsg('Please enter email & password', false); return; }
-
-            if (mode === 'signup') {
-                if (!name) { showMsg('Please enter your full name', false); return; }
-                showMsg('Creating account...');
-                try {
-                    const salt = genSalt(16);
-                    const hash = await hashSalted(salt, password);
-                    const body = { action: 'signup', email, name, username, salt, hash };
-                    const res = await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify(body) });
-                    const j = await res.json();
-                    if (j.ok) {
-                        // auto-store session (email) locally
-                        localStorage.setItem('site_user_email', email);
-                        showMsg('Signup successful — you are logged in');
-                        setTimeout(() => location.href = '/', 800);
-                    } else {
-                        showMsg(j.message || 'Signup failed', false);
-                    }
-                } catch (err) {
-                    showMsg('Signup error: ' + err.message, false);
-                }
-            } else {
-                // login flow: first fetch salt (server returns salt), then hash locally and post login
-                showMsg('Signing in...');
-                try {
-                    const saltResp = await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify({ action: 'get_salt', email }) });
-                    const saltJson = await saltResp.json();
-                    if (!saltJson.ok) { showMsg(saltJson.message || 'No such account', false); return; }
-                    const salt = saltJson.salt || '';
-                    const hash = await hashSalted(salt, password);
-                    const res = await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify({ action: 'login', email, hash }) });
-                    const j = await res.json();
-                    if (j.ok) {
-                        localStorage.setItem('site_user_email', email);
-                        showMsg('Login successful — redirecting...');
-                        setTimeout(() => location.href = '/', 700);
-                    } else {
-                        showMsg(j.message || 'Login failed', false);
-                    }
-                } catch (err) {
-                    showMsg('Login error: ' + err.message, false);
-                }
-            }
-        });
-
-        /* optional: if already logged in, show message */
-        window.addEventListener('load', () => {
-            const existing = localStorage.getItem('site_user_email');
-            if (existing) showMsg('Signed in as ' + existing);
-        });
-    </script>
-
-    <!-- Both Database & Analytics Script -->
-    <script>
-(async function(){
-  const userAgent = navigator.userAgent;
-  function getBrowserName(ua){
-    if(ua.includes("Edge") || ua.includes("Edg/")) return "Edge";
-    if(ua.includes("OPR") || ua.includes("Opera")) return "Opera";
-    if(ua.includes("Chrome") && !ua.includes("Edg/")) return "Chrome";
-    if(ua.includes("Firefox")) return "Firefox";
-    if(ua.includes("Safari") && !ua.includes("Chrome")) return "Safari";
-    return "Other";
-  }
-  function getDeviceType(ua){
-    if(/Mobi|Android/i.test(ua)) return "Mobile";
-    if(/Tablet|iPad/i.test(ua)) return "Tablet";
-    return "Desktop";
-  }
-
-  const browser = getBrowserName(userAgent);
-  const device = getDeviceType(userAgent);
-  const screenResolution = `${window.screen.width}x${window.screen.height}`;
-  const language = navigator.language || "Unknown";
-  const country = await (async ()=>{
-    try {
-      const r = await fetch('https://ipwhois.app/json/');
-      const j = await r.json();
-      return j.country || "Unknown";
-    } catch(e){
-      return "Unknown";
-    }
-  })();
-  const email = localStorage.getItem('site_user_email') || "Guest";
-
-  const payload = {
-    action: "analytics",
-    page: window.location.href,
-    userAgent,
-    browser,
-    device,
-    screenResolution,
-    language,
-    country,
-    email
-  };
-
-  try {
-    await fetch("https://script.google.com/macros/s/AKfycbxnuP9e-oWQ8fqA7iQFrZWfjJpBUaBDiaV-mgZPNMkf-2vBEsoAtMOaEkEMQRXoYU2T/exec", { method: "POST", body: JSON.stringify(payload) });
-  } catch(e){
-    // ignore logging failures
-  }
-})();
-</script>
-
-<script>
-const email = localStorage.getItem('site_user_email');
-const authLink = document.getElementById('auth-link');
-if (email) {
-  authLink.textContent = 'Logout (' + email.split('@')[0] + ')';
-  authLink.href = '#';
-  authLink.onclick = () => {
-    localStorage.removeItem('site_user_email');
-    alert('Logged out successfully!');
-    location.reload();
-  };
-}
-</script>
-
-
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
 </body>
-
-
 </html>
-
