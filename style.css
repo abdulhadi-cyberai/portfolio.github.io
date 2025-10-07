@@ -681,6 +681,69 @@ section {
     border-color: #e03131;
 }
 
+/* ==== FIX: Prevent Horizontal Scrolling on Mobile ==== */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Make sure account card fits properly on small screens */
+.auth-card {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #1E1E1E;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Fix password wrapper overflow */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px; /* space for eye icon */
+}
+
+.password-wrapper .toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+}
+
+/* Ensure buttons and text don’t stretch screen */
+.btn, input, textarea {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 15px;
+  }
+
+  h1, h2, p, label {
+    word-break: break-word;
+  }
+}
+
 /* --- Responsive Design --- */
 
 /* Tab View */
@@ -771,3 +834,4 @@ section {
         padding: 1rem 1.5rem; /* Taller touch targets */
     }
 }
+
