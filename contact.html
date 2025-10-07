@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailInput = document.getElementById("contactEmail");
     const nameInput = document.getElementById("contactName");
 
-    // Create limit message and timer container
+    // Cooldown message container
     const limitContainer = document.createElement("div");
     limitContainer.id = "limitContainer";
     limitContainer.style.textAlign = "center";
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     limitContainer.style.color = "#ff4444";
     form.parentElement.appendChild(limitContainer);
 
-    // Helper: Format time
+    // Format countdown time
     function formatTime(ms) {
         const totalSeconds = Math.floor(ms / 1000);
         const hours = Math.floor(totalSeconds / 3600);
@@ -114,25 +114,25 @@ document.addEventListener("DOMContentLoaded", () => {
         return `${hours.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`;
     }
 
-    // Update timer display with clickable urgent email
+    // Show cooldown timer with urgent contact
     function updateTimer(remainingMs) {
         limitContainer.innerHTML = `
             <p>You’ve already sent a message today.</p>
             <p>Please wait <strong>${formatTime(remainingMs)}</strong> to send another.</p>
-            <p>If urgent, contact me directly: 
+            <p>If urgent, contact me directly:
                 <span id="urgent-email" style="color:#007bff; text-decoration:underline; cursor:pointer;">abdul@abdulhadi.com.np</span>
             </p>
-            <p style="font-size:0.9em; color:#888;">If clicking the email doesn’t work, copy and paste it into your mail client to send a message.</p>
+            <p style="font-size:0.9em; color:#888;">If clicking doesn’t work, copy and paste the email into your mail app.</p>
         `;
-        const urgentLink = document.getElementById('urgent-email');
+        const urgentLink = document.getElementById("urgent-email");
         if (urgentLink) {
-            urgentLink.addEventListener('click', function() {
+            urgentLink.addEventListener("click", () => {
                 window.location.href = "mailto:abdul@abdulhadi.com.np";
             });
         }
     }
 
-    // Start countdown timer
+    // Countdown timer logic
     function startCountdown(remainingMs, lastSentKey) {
         form.style.display = "none";
         limitContainer.style.display = "block";
@@ -142,7 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const lastSentTime = parseInt(localStorage.getItem(lastSentKey));
             const now = Date.now();
             const remaining = 86400000 - (now - lastSentTime);
-
             if (remaining <= 0) {
                 clearInterval(interval);
                 localStorage.removeItem(lastSentKey);
@@ -159,52 +158,47 @@ document.addEventListener("DOMContentLoaded", () => {
         loginMsg.style.display = "none";
         form.style.display = "block";
 
-        // Unlock name (editable)
+        // Unlock name
         nameInput.removeAttribute("readonly");
-        nameInput.style.backgroundColor = "";
-        nameInput.style.cursor = "";
 
-        // Lock email (visible only)
+        // Lock email (visible but uneditable)
         emailInput.value = email;
         emailInput.readOnly = true;
-        emailInput.style.backgroundColor = '#f5f5f5';
-        emailInput.title = "You cannot change this email";
+        emailInput.style.backgroundColor = "#eaeaea";
+        emailInput.style.color = "#333";
         emailInput.style.cursor = "not-allowed";
-        emailInput.addEventListener('click', () => {
-            alert("You cannot change your email here.");
-        });
+        emailInput.title = "You cannot change this email";
+        emailInput.addEventListener("click", () => alert("You cannot change your email here."));
+        emailInput.addEventListener("mouseenter", () => emailInput.setAttribute("title", "Email is locked for security."));
 
         const lastSentKey = `lastContactTime_${email}`;
         const lastSentTime = localStorage.getItem(lastSentKey);
         const now = Date.now();
 
-        // If still in cooldown → show timer immediately
+        // If still in cooldown → show timer
         if (lastSentTime && now - parseInt(lastSentTime) < 86400000) {
             const remaining = 86400000 - (now - parseInt(lastSentTime));
             startCountdown(remaining, lastSentKey);
         }
 
-        // Handle submit
+        // Handle submission (normal HTML submission)
         form.addEventListener("submit", (e) => {
-            e.preventDefault();
             const lastSentTime = localStorage.getItem(lastSentKey);
             const now = Date.now();
 
+            // If still in cooldown, block submission
             if (lastSentTime && now - parseInt(lastSentTime) < 86400000) {
+                e.preventDefault();
                 const remaining = 86400000 - (now - parseInt(lastSentTime));
                 startCountdown(remaining, lastSentKey);
                 return;
             }
 
-            // Store timestamp and start cooldown
+            // Otherwise allow real submission and store time
             localStorage.setItem(lastSentKey, now);
-            form.reset();
-            alert("Message sent successfully!");
-            startCountdown(86400000, lastSentKey);
         });
 
     } else {
-        // Not logged in → hide form, show login message
         form.style.display = "none";
         loginMsg.style.display = "block";
     }
@@ -212,6 +206,8 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
+
 </body>
 
 </html>
+
