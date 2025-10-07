@@ -11,9 +11,11 @@
 
 /* --- Professional Color Palette --- */
 :root {
-    --primary-color: #3671E9; /* A professional, modern blue */
-    --secondary-color: #2D5FBE; /* A darker shade for hover effects */
-    --linkedin-blue: #0A66C2; 
+    --primary-color: #3671E9;
+    /* A professional, modern blue */
+    --secondary-color: #2D5FBE;
+    /* A darker shade for hover effects */
+    --linkedin-blue: #0A66C2;
     --background-dark: #121212;
     --surface-color: #1E1E1E;
     --text-primary: #FAFAFA;
@@ -131,7 +133,8 @@ a:hover {
 
 /* --- Main Content Sections --- */
 main {
-    padding-top: 80px; /* Offset for fixed header */
+    padding-top: 80px;
+    /* Offset for fixed header */
 }
 
 section {
@@ -199,7 +202,8 @@ section {
     font-weight: 600;
     font-size: 1rem;
     transition: all 0.3s ease;
-    border: 2px solid var(--primary-color); /* All buttons have the border now */
+    border: 2px solid var(--primary-color);
+    /* All buttons have the border now */
     cursor: pointer;
     text-align: center;
 }
@@ -236,14 +240,15 @@ section {
 
 .btn-linkedin {
     /* Use LinkedIn blue for the background and border */
-    background-color: var(--linkedin-blue); 
+    background-color: var(--linkedin-blue);
     border-color: var(--linkedin-blue);
-    color: #fff !important; /* Ensure text is white */
+    color: #fff !important;
+    /* Ensure text is white */
 }
 
 .btn-linkedin:hover {
     /* Use the standard secondary hover effect, but with LinkedIn blue */
-    background-color: transparent; 
+    background-color: transparent;
     color: var(--linkedin-blue) !important;
     border-color: var(--linkedin-blue);
     /* Keeps the existing transform/shadow for a unified look */
@@ -497,7 +502,7 @@ section {
 .certification-card:hover {
     border-color: var(--primary-color);
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .cert-header {
@@ -555,11 +560,13 @@ section {
 /* Add these new styles to the BOTTOM of your existing style.css file, before the media queries */
 
 /* --- AUTH & ACCOUNT PAGE STYLES --- */
-.auth, .account {
+.auth,
+.account {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 80px); /* 80px is header height */
+    min-height: calc(100vh - 80px);
+    /* 80px is header height */
     padding: 2rem 0;
 }
 
@@ -639,6 +646,19 @@ section {
     color: var(--text-secondary);
 }
 
+/* Align checkbox and label horizontally */
+.form-group.remember-me {
+    display: flex;
+    align-items: center;
+    /* vertically center */
+    /* justify-content: flex-start; align to left */
+    gap: 5px;
+    /* space between checkbox and label */
+    margin-bottom: 15px;
+    /* spacing below */
+}
+
+
 #submitBtn {
     width: 100%;
     margin-top: 1.5rem;
@@ -682,67 +702,75 @@ section {
 }
 
 /* ==== FIX: Prevent Horizontal Scrolling on Mobile ==== */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .container {
-  max-width: 100%;
-  overflow-x: hidden;
-  padding: 0 15px;
-  box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 
 /* Make sure account card fits properly on small screens */
 .auth-card {
-  max-width: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 10px;
-  background: #1E1E1E;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: #1E1E1E;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Fix password wrapper overflow */
 .password-wrapper {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .password-wrapper input {
-  width: 100%;
-  padding-right: 40px; /* space for eye icon */
+    width: 100%;
+    padding-right: 40px;
+    /* space for eye icon */
 }
 
 .password-wrapper .toggle-password {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #666;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
 }
 
 /* Ensure buttons and text don’t stretch screen */
-.btn, input, textarea {
-  max-width: 100%;
-  box-sizing: border-box;
+.btn,
+input,
+textarea {
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
-  .auth-card {
-    padding: 15px;
-  }
+    .auth-card {
+        padding: 15px;
+    }
 
-  h1, h2, p, label {
-    word-break: break-word;
-  }
+    h1,
+    h2,
+    p,
+    label {
+        word-break: break-word;
+    }
 }
+
 
 /* --- Responsive Design --- */
 
@@ -781,10 +809,11 @@ html, body {
     }
 
     .typed-wrapper {
-       min-width: unset;
+        min-width: unset;
     }
 
-    .about-container, .contact-container {
+    .about-container,
+    .contact-container {
         flex-direction: column;
     }
 }
@@ -820,18 +849,19 @@ html, body {
     /* **CRITICAL ADDITION FOR BUTTONS** */
     .hero-buttons {
         /* Ensure column stacking on smallest screens, if not already done by 992px query */
-        flex-direction: column; 
-        gap: 0.8rem; /* Space between stacked buttons */
+        flex-direction: column;
+        gap: 0.8rem;
+        /* Space between stacked buttons */
         justify-content: center;
     }
-    
+
     /* Apply full width and padding to ALL buttons for better touch targets */
-    .btn, 
-    .btn-secondary, 
+    .btn,
+    .btn-secondary,
     .btn-primary,
     .btn-linkedin {
-        width: 350px; 
-        padding: 1rem 1.5rem; /* Taller touch targets */
+        width: 350px;
+        padding: 1rem 1.5rem;
+        /* Taller touch targets */
     }
 }
-
