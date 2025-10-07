@@ -1,7 +1,7 @@
 // auth.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxnuP9e-oWQ8fqA7iQFrZWfjJpBUaBDiaV-mgZPNMkf-2vBEsoAtMOaEkEMQRXoYU2T/exec"; // <-- REPLACE with your Web App URL
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbw9OKBW9joSM_4piyZ8Y0sZ54tXr21_Ir7xyiNzowYxFw48gY63Yc9VRqhUFfFIM1e4/exec"; // <-- REPLACE with your Web App URL
 
     /* ---------------- Utilities ---------------- */
     function el(id) { return document.getElementById(id) }
@@ -111,4 +111,5 @@ document.addEventListener('DOMContentLoaded', () => {
             this.classList.toggle('fa-eye-slash');
         });
     });
+
 });
