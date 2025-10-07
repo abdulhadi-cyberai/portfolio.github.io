@@ -324,7 +324,23 @@
 })();
 </script>
 
+<script>
+const email = localStorage.getItem('site_user_email');
+const authLink = document.getElementById('auth-link');
+if (email) {
+  authLink.textContent = 'Logout (' + email.split('@')[0] + ')';
+  authLink.href = '#';
+  authLink.onclick = () => {
+    localStorage.removeItem('site_user_email');
+    alert('Logged out successfully!');
+    location.reload();
+  };
+}
+</script>
+
+
 </body>
 
 
 </html>
+
