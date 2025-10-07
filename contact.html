@@ -1,45 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Contact Abdul Hadi for collaborations, services, or inquiries. Get in touch via email or the contact form." />
+  <meta name="description" content="Contact Abdul Hadi for collaborations, services, or inquiries. Get in touch via email or the contact form." />
   <meta name="keywords" content="Contact Abdul Hadi, Hire Cybersecurity Expert, AI Developer" />
   <title>Contact Me | Abdul Hadi</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <!-- 100% privacy-first analytics -->
-  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-
 </head>
-
 <body>
-  <header class="header">
-    <nav class="navbar container">
-      <a href="index.html" class="nav-logo">Abdul Hadi</a>
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="contact.html" class="nav-link active">Contact</a></li>
-        <li><a href="auth.html" id="auth-link" class="nav-link">Sign in</a></li>
-      </ul>
-      <div class="nav-toggle">
-        <i class="fas fa-bars"></i>
-      </div>
-    </nav>
-  </header>
-
-  <main>
+  <header class="header"></header> <main>
     <section class="contact">
       <div class="container">
         <h1 class="section-title">Contact Me</h1>
         <p class="section-subtitle">
-          Have a question or want to work together? Feel free to reach out.
-          I'd love to hear from you!
+          Have a question or want to work together? Feel free to reach out. I'd love to hear from you!
         </p>
         <div class="contact-container">
           <div class="contact-info">
@@ -65,156 +41,27 @@
               </div>
             </div>
           </div>
-          <form id="contactForm" action="https://formspree.io/f/xanpjrvg" method="POST" class="contact-form">
-            <div class="form-group">
-              <input type="text" name="name" placeholder="Your Name" required />
-            </div>
-            <div class="form-group">
-              <input type="email" name="email" placeholder="Your Email" required />
-            </div>
-            <div class="form-group">
-              <textarea name="message" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">
-              Send Message
-            </button>
-          </form>
-
-          <p id="status"></p>
+          <div class="contact-form">
+            <form id="contactForm" action="https://formspree.io/f/xanpjrvg" method="POST">
+                <div class="form-group">
+                  <input type="text" name="name" placeholder="Your Name" required />
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" placeholder="Your Email" required />
+                </div>
+                <div class="form-group">
+                  <textarea name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <p id="status" class="small"></p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-socials">
-        <a href="https://github.com/abdulhadi-cyberai" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://np.linkedin.com/in/abdulhadi-cyberai" target="_blank" title="LinkedIn"><i
-            class="fab fa-linkedin"></i></a>
-      </div>
-      <p class="copyright">
-        Copyright &copy; 2025 Abdul Hadi | All rights reserved.
-      </p>
-    </div>
-  </footer>
-
-  <script>
-/* ---------------- Helper Functions ---------------- */
-function getBrowserName(userAgent) {
-  if(userAgent.includes("Edge") || userAgent.includes("Edg/")) return "Edge";  // check Edge first
-  if(userAgent.includes("Chrome")) return "Chrome";
-  if(userAgent.includes("Firefox")) return "Firefox";
-  if(userAgent.includes("Safari") && !userAgent.includes("Chrome")) return "Safari";
-  return "Other";
-}
-
-function getDeviceType(userAgent) {
-  if (/Mobi|Android/i.test(userAgent)) return "Mobile";
-  if (/Tablet|iPad/i.test(userAgent)) return "Tablet";
-  return "Desktop";
-}
-
-/* ---------------- Main Async Function ---------------- */
-(async function() {
-  const userAgent = navigator.userAgent;
-  const browser = getBrowserName(userAgent);
-  const device = getDeviceType(userAgent);
-  const screenResolution = `${window.screen.width}x${window.screen.height}`;
-  const language = navigator.language || "Unknown";
-
-  // Fetch country from free API (reliable for static sites)
-  let country = "Unknown";
-  try {
-    const res = await fetch('https://ipwhois.app/json/');
-    const data = await res.json();
-    country = data.country || "Unknown";
-  } catch(e) {
-    console.log("Country detection failed:", e);
-  }
-
-  /* ---------------- Payload to send to Google Sheet ---------------- */
-  const payload = {
-    timestamp: new Date().toISOString(),
-    page: window.location.href,
-    browser,
-    device,
-    screenResolution,
-    language,
-    country
-  };
-
-  /* ---------------- Send data to your Google Apps Script ---------------- */
-  fetch("https://script.google.com/macros/s/AKfycbzhVLuQfJLUAgaM2GnPic4-nkz4kUL06kS5oOJuU3R9YFOHQ5iqnZVPgBSxyFlBS_X6/exec", {
-    method: "POST",
-    body: JSON.stringify(payload)
-  });
-})();
-</script>
-
-<!-- Both Database & Analytics Script -->
-<script>
-(async function(){
-  const userAgent = navigator.userAgent;
-  function getBrowserName(ua){
-    if(ua.includes("Edge") || ua.includes("Edg/")) return "Edge";
-    if(ua.includes("OPR") || ua.includes("Opera")) return "Opera";
-    if(ua.includes("Chrome") && !ua.includes("Edg/")) return "Chrome";
-    if(ua.includes("Firefox")) return "Firefox";
-    if(ua.includes("Safari") && !ua.includes("Chrome")) return "Safari";
-    return "Other";
-  }
-  function getDeviceType(ua){
-    if(/Mobi|Android/i.test(ua)) return "Mobile";
-    if(/Tablet|iPad/i.test(ua)) return "Tablet";
-    return "Desktop";
-  }
-
-  const browser = getBrowserName(userAgent);
-  const device = getDeviceType(userAgent);
-  const screenResolution = `${window.screen.width}x${window.screen.height}`;
-  const language = navigator.language || "Unknown";
-  const country = await (async ()=>{
-    try {
-      const r = await fetch('https://ipwhois.app/json/');
-      const j = await r.json();
-      return j.country || "Unknown";
-    } catch(e){
-      return "Unknown";
-    }
-  })();
-  const email = localStorage.getItem('site_user_email') || "Guest";
-
-  const payload = {
-    action: "analytics",
-    page: window.location.href,
-    userAgent,
-    browser,
-    device,
-    screenResolution,
-    language,
-    country,
-    email
-  };
-
-  try {
-    await fetch("https://script.google.com/macros/s/AKfycbxnuP9e-oWQ8fqA7iQFrZWfjJpBUaBDiaV-mgZPNMkf-2vBEsoAtMOaEkEMQRXoYU2T/exec", { method: "POST", body: JSON.stringify(payload) });
-  } catch(e){
-    // ignore logging failures
-  }
-})();
-</script>
-
-  
-  <script src="script.js"></script>
+  <footer class="footer"></footer> <script src="script.js"></script>
+  <script src="contact.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
