@@ -63,6 +63,122 @@
     </section>
   </main>
 
-  <footer class="footer"></footer> <script src="script.js"></script>
+  <footer class="footer"></footer>
+  <script src="script.js"></script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const email = localStorage.getItem("site_user_email");
+  const form = document.getElementById("contactForm");
+  const loginMsg = document.getElementById("loginMessage");
+  const emailInput = document.getElementById("contactEmail");
+  const nameInput = document.getElementById("contactName");
+
+  // Create limit message and timer container
+  const limitContainer = document.createElement("div");
+  limitContainer.id = "limitContainer";
+  limitContainer.style.textAlign = "center";
+  limitContainer.style.marginTop = "20px";
+  limitContainer.style.display = "none";
+  limitContainer.style.fontSize = "1.1em";
+  limitContainer.style.color = "#ff4444";
+  form.parentElement.appendChild(limitContainer);
+
+  // Helper: Format time
+  function formatTime(ms) {
+    const totalSeconds = Math.floor(ms / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    return `${hours.toString().padStart(2, "0")}:${minutes
+      .toString()
+      .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+  }
+
+  // Start countdown timer
+  function startCountdown(remainingMs, lastSentKey) {
+    form.style.display = "none";
+    limitContainer.style.display = "block";
+    updateTimer(remainingMs, lastSentKey);
+
+    const interval = setInterval(() => {
+      const lastSentTime = parseInt(localStorage.getItem(lastSentKey));
+      const now = Date.now();
+      const remaining = 86400000 - (now - lastSentTime);
+
+      if (remaining <= 0) {
+        clearInterval(interval);
+        localStorage.removeItem(lastSentKey);
+        limitContainer.style.display = "none";
+        form.style.display = "block";
+        return;
+      }
+
+      updateTimer(remaining, lastSentKey);
+    }, 1000);
+  }
+
+  // Update timer display
+  function updateTimer(remainingMs) {
+    limitContainer.innerHTML = `
+      <p>You’ve already sent a message today.</p>
+      <p>Please wait <strong>${formatTime(remainingMs)}</strong> to send another.</p>
+    `;
+  }
+
+  // Main logic
+  if (email) {
+    loginMsg.style.display = "none";
+    form.style.display = "block";
+
+    // Unlock name (editable)
+    nameInput.removeAttribute("readonly");
+    nameInput.style.backgroundColor = "";
+    nameInput.style.cursor = "";
+
+    // Lock email (visible only)
+    emailInput.value = email;
+    emailInput.readOnly = true;
+    emailInput.style.backgroundColor = "#e9ecef";
+    emailInput.style.color = "#333";
+    emailInput.style.cursor = "not-allowed";
+
+    const lastSentKey = `lastContactTime_${email}`;
+    const lastSentTime = localStorage.getItem(lastSentKey);
+    const now = Date.now();
+
+    // If still in cooldown → show timer immediately
+    if (lastSentTime && now - parseInt(lastSentTime) < 86400000) {
+      const remaining = 86400000 - (now - parseInt(lastSentTime));
+      startCountdown(remaining, lastSentKey);
+    }
+
+    // Handle submit
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const lastSentTime = localStorage.getItem(lastSentKey);
+      const now = Date.now();
+
+      if (lastSentTime && now - parseInt(lastSentTime) < 86400000) {
+        const remaining = 86400000 - (now - parseInt(lastSentTime));
+        startCountdown(remaining, lastSentKey);
+        return;
+      }
+
+      // Store timestamp and start cooldown
+      localStorage.setItem(lastSentKey, now);
+      form.reset();
+      alert("Message sent successfully!");
+      startCountdown(86400000, lastSentKey);
+    });
+  } else {
+    form.style.display = "none";
+    loginMsg.style.display = "block";
+  }
+});
+</script>
+
+  
 </body>
 </html>
+
