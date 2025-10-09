@@ -1,4 +1,6 @@
-/* style.css (Updated) */
+/* =================================================================== */
+/* ---        FINAL, ORGANIZED & RESPONSIVE STYLESHEET           --- */
+/* =================================================================== */
 
 /* --- Google Fonts & CSS Reset --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
@@ -7,14 +9,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* Ensures padding and borders don't break layouts */
 }
 
-/* --- Professional Color Palette --- */
+/* --- Root Variables for Colors & Fonts --- */
 :root {
     --primary-color: #3671E9;
-    /* A professional, modern blue */
     --secondary-color: #2D5FBE;
-    /* A darker shade for hover effects */
     --linkedin-blue: #0A66C2;
     --background-dark: #121212;
     --surface-color: #1E1E1E;
@@ -25,6 +26,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* Final safeguard against accidental overflow */
 }
 
 body {
@@ -46,8 +49,10 @@ a:hover {
 
 .container {
     max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .section-title {
@@ -91,6 +96,7 @@ a:hover {
 
 .nav-menu {
     display: flex;
+    align-items: center;
     list-style: none;
     gap: 2rem;
 }
@@ -130,18 +136,68 @@ a:hover {
     color: var(--text-primary);
 }
 
-
-/* --- Main Content Sections --- */
+/* --- Main Content & Sections --- */
 main {
     padding-top: 80px;
-    /* Offset for fixed header */
 }
 
 section {
     padding: 6rem 0;
 }
 
-/* --- Hero Section (Home Page) --- */
+/* --- Button Component Styles --- */
+.btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid transparent;
+    /* Set transparent border initially for smooth hover */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(54, 113, 233, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(54, 113, 233, 0.5);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.btn-linkedin {
+    background-color: var(--linkedin-blue);
+    border-color: var(--linkedin-blue);
+    color: #fff !important;
+}
+
+.btn-linkedin:hover {
+    background-color: transparent;
+    color: var(--linkedin-blue) !important;
+    border-color: var(--linkedin-blue);
+    transform: translateY(-3px);
+}
+
+/* --- Hero Section --- */
 .hero {
     display: flex;
     align-items: center;
@@ -155,7 +211,6 @@ section {
     gap: 2rem;
     width: 100%;
 }
-
 
 .hero-content {
     max-width: 600px;
@@ -196,64 +251,6 @@ section {
     gap: 1rem;
 }
 
-.btn {
-    padding: 0.8rem 1.8rem;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    border: 2px solid var(--primary-color);
-    /* All buttons have the border now */
-    cursor: pointer;
-    text-align: center;
-}
-
-.btn-primary {
-    background-color: var(--linkedin-blue);
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(54, 113, 233, 0.4);
-}
-
-.btn-primary:hover {
-    background-color: transparent;
-    color: var(--primary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(54, 113, 233, 0.5);
-}
-
-.btn-secondary {
-    background-color: var(--linkedin-blue);
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(54, 113, 233, 0.4);
-}
-
-.btn-secondary:hover {
-    background-color: transparent;
-    color: var(--primary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(54, 113, 233, 0.5);
-}
-
-/* LinkedIn Button Styling */
-/* Define the official LinkedIn brand color */
-
-
-.btn-linkedin {
-    /* Use LinkedIn blue for the background and border */
-    background-color: var(--linkedin-blue);
-    border-color: var(--linkedin-blue);
-    color: #fff !important;
-    /* Ensure text is white */
-}
-
-.btn-linkedin:hover {
-    /* Use the standard secondary hover effect, but with LinkedIn blue */
-    background-color: transparent;
-    color: var(--linkedin-blue) !important;
-    border-color: var(--linkedin-blue);
-    /* Keeps the existing transform/shadow for a unified look */
-}
-
 .hero-image {
     max-width: 350px;
     text-align: center;
@@ -266,7 +263,7 @@ section {
     box-shadow: 0 0 25px rgba(54, 113, 233, 0.4);
 }
 
-/* --- About Page --- */
+/* --- About & Certifications Section --- */
 .about-container {
     display: flex;
     gap: 4rem;
@@ -309,186 +306,6 @@ section {
     color: var(--primary-color);
 }
 
-/* --- Services Page --- */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
-    background-color: var(--surface-color);
-    padding: 2.5rem 2rem;
-    border-radius: 10px;
-    text-align: center;
-    border-bottom: 4px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    border-bottom-color: var(--primary-color);
-}
-
-.service-card .icon {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-}
-
-.service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.service-card p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-/* --- Projects Page --- */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-}
-
-.project-card {
-    background-color: var(--surface-color);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-image img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-}
-
-.project-content {
-    padding: 1.5rem;
-}
-
-.project-content h3 {
-    font-size: 1.4rem;
-    color: var(--primary-color);
-}
-
-.project-content p {
-    color: var(--text-secondary);
-    margin: 1rem 0;
-}
-
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.tech-tag {
-    background-color: #333;
-    color: var(--text-secondary);
-    padding: 0.3rem 0.8rem;
-    border-radius: 5px;
-    font-size: 0.8rem;
-}
-
-.project-links a {
-    font-size: 1.5rem;
-    margin-right: 1rem;
-}
-
-/* --- Contact Page --- */
-.contact-container {
-    display: flex;
-    gap: 4rem;
-}
-
-.contact-info {
-    flex-basis: 40%;
-}
-
-.contact-info-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.contact-info-item .icon {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-}
-
-.contact-info-item h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.2rem;
-}
-
-.contact-info-item p {
-    color: var(--text-secondary);
-}
-
-.contact-form {
-    flex-basis: 60%;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 5px;
-    border: 1px solid #444;
-    background-color: var(--surface-color);
-    color: var(--text-primary);
-    font-family: var(--font-family);
-    font-size: 1rem;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-/* --- Footer --- */
-.footer {
-    background-color: var(--surface-color);
-    padding: 3rem 0;
-    text-align: center;
-}
-
-.footer-socials {
-    margin-bottom: 1.5rem;
-}
-
-.footer-socials a {
-    font-size: 1.5rem;
-    margin: 0 1rem;
-    color: var(--text-secondary);
-}
-
-.footer-socials a:hover {
-    color: var(--primary-color);
-}
-
-.copyright {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-/* --- NEW CERTIFICATIONS SECTION STYLES --- */
 .certification-card {
     background-color: var(--surface-color);
     border-radius: 10px;
@@ -556,18 +373,139 @@ section {
     padding-top: 1rem;
 }
 
-/* style.css (Additions Only) */
-/* Add these new styles to the BOTTOM of your existing style.css file, before the media queries */
+/* --- Services & Projects Sections --- */
+.services-grid,
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
 
-/* --- AUTH & ACCOUNT PAGE STYLES --- */
+.service-card {
+    background-color: var(--surface-color);
+    padding: 2.5rem 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border-bottom: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-bottom-color: var(--primary-color);
+}
+
+.service-card .icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.project-card {
+    background-color: var(--surface-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.project-content p {
+    color: var(--text-secondary);
+    margin: 1rem 0;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+    background-color: #333;
+    color: var(--text-secondary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+.project-links a {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+/* --- Contact, Auth & Account Page Styles --- */
+.contact-container {
+    display: flex;
+    gap: 4rem;
+}
+
+.contact-info {
+    flex-basis: 40%;
+}
+
+.contact-form {
+    flex-basis: 60%;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info-item .icon {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.contact-info-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.contact-info-item p {
+    color: var(--text-secondary);
+}
+
 .auth,
 .account {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 80px);
-    /* 80px is header height */
-    padding: 2rem 0;
+    padding: 4rem 0;
 }
 
 .auth-card {
@@ -575,7 +513,7 @@ section {
     max-width: 450px;
     width: 100%;
     border-radius: 10px;
-    padding: 2rem;
+    padding: 2.5rem;
     border: 1px solid #333;
 }
 
@@ -604,7 +542,6 @@ section {
     text-align: center;
     cursor: pointer;
     background-color: #333;
-    border: 1px solid transparent;
     transition: all 0.3s ease;
 }
 
@@ -618,6 +555,10 @@ section {
     font-weight: 600;
 }
 
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
 .form-group label {
     display: block;
     font-size: 0.9rem;
@@ -625,8 +566,21 @@ section {
     color: var(--text-secondary);
 }
 
-.form-group input {
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #444;
     background-color: var(--background-dark);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
 }
 
 .password-wrapper {
@@ -637,27 +591,24 @@ section {
 
 .password-wrapper input {
     width: 100%;
+    padding-right: 40px;
 }
 
 .toggle-password {
     position: absolute;
     right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
     color: var(--text-secondary);
 }
 
-/* Align checkbox and label horizontally */
 .form-group.remember-me {
     display: flex;
     align-items: center;
-    /* vertically center */
-    /* justify-content: flex-start; align to left */
     gap: 5px;
-    /* space between checkbox and label */
     margin-bottom: 15px;
-    /* spacing below */
 }
-
 
 #submitBtn {
     width: 100%;
@@ -666,13 +617,12 @@ section {
 
 .small {
     font-size: 0.9rem;
-    color: var(--muted);
+    color: var(--text-secondary);
     margin-top: 1rem;
     text-align: center;
     min-height: 1.2em;
 }
 
-/* --- ACCOUNT PAGE SPECIFIC --- */
 .danger-zone {
     margin-top: 3rem;
     border-top: 1px solid #444;
@@ -701,91 +651,54 @@ section {
     border-color: #e03131;
 }
 
-/* ==== FIX: Prevent Horizontal Scrolling on Mobile ==== */
-html,
-body {
-    overflow-x: hidden;
-    width: 100%;
+/* --- Footer --- */
+.footer {
+    background-color: var(--surface-color);
+    padding: 3rem 0;
+    text-align: center;
 }
 
-.container {
-    max-width: 100%;
-    overflow-x: hidden;
-    padding: 0 15px;
-    box-sizing: border-box;
+.footer-socials {
+    margin-bottom: 1.5rem;
 }
 
-/* Make sure account card fits properly on small screens */
-.auth-card {
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 10px;
-    background: #1E1E1E;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.footer-socials a {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    color: var(--text-secondary);
 }
 
-/* Fix password wrapper overflow */
-.password-wrapper {
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
+.footer-socials a:hover {
+    color: var(--primary-color);
 }
 
-.password-wrapper input {
-    width: 100%;
-    padding-right: 40px;
-    /* space for eye icon */
-}
-
-.password-wrapper .toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #666;
-}
-
-/* Ensure buttons and text don’t stretch screen */
-.btn,
-input,
-textarea {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-/* Responsive adjustments */
-@media (max-width: 480px) {
-    .auth-card {
-        padding: 15px;
-    }
-
-    h1,
-    h2,
-    p,
-    label {
-        word-break: break-word;
-    }
+.copyright {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 
-/* --- Responsive Design --- */
+/* =================================================================== */
+/* ---           SINGLE, CONSOLIDATED RESPONSIVE SECTION           --- */
+/* =================================================================== */
 
-/* Tab View */
+/* --- Tablet View --- */
 @media (max-width: 992px) {
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
     .nav-toggle {
         display: block;
     }
 
     .nav-menu {
         position: fixed;
-        top: 80px;
+        top: 70px;
         right: -100%;
         width: 60%;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 70px);
         background-color: var(--surface-color);
         flex-direction: column;
         align-items: center;
@@ -818,14 +731,33 @@ textarea {
     }
 }
 
-/* Mobile View */
+/* --- Mobile View --- */
 @media (max-width: 576px) {
-    .hero-content h1 {
-        font-size: 2.8rem;
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .btn,
+    .btn-secondary,
+    .btn-primary,
+    .btn-linkedin {
+        width: 100%;
+        max-width: 350px;
     }
 
     .about-info {
@@ -836,6 +768,10 @@ textarea {
         width: 80%;
     }
 
+    .auth-card {
+        padding: 1.5rem;
+    }
+
     .cert-header {
         flex-direction: column;
         text-align: center;
@@ -844,24 +780,5 @@ textarea {
 
     .cert-footer {
         text-align: center;
-    }
-
-    /* **CRITICAL ADDITION FOR BUTTONS** */
-    .hero-buttons {
-        /* Ensure column stacking on smallest screens, if not already done by 992px query */
-        flex-direction: column;
-        gap: 0.8rem;
-        /* Space between stacked buttons */
-        justify-content: center;
-    }
-
-    /* Apply full width and padding to ALL buttons for better touch targets */
-    .btn,
-    .btn-secondary,
-    .btn-primary,
-    .btn-linkedin {
-        width: 350px;
-        padding: 1rem 1.5rem;
-        /* Taller touch targets */
     }
 }
