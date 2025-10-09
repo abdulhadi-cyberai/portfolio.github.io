@@ -756,8 +756,8 @@ section {
     .btn-secondary,
     .btn-primary,
     .btn-linkedin {
-        width: 100%;
-        max-width: 350px;
+        width: 350px;
+        /* max-width: 350px; */
     }
 
     .about-info {
@@ -782,3 +782,4 @@ section {
         text-align: center;
     }
 }
+
