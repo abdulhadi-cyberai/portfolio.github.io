@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="footer-socials">
                 <a href="https://github.com/abdulhadi-cyberai" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://np.linkedin.com/in/abdulhadi-cyberai" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/abdulhadinp/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/abdul.hadi.236601" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
             </div>
             <p class="copyright">Copyright &copy; ${new Date().getFullYear()} Abdul Hadi | All rights reserved.</p>
         </div>
@@ -157,4 +159,5 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     })();
 });
+
 
