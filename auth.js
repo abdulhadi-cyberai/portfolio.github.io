@@ -1,4 +1,4 @@
-// auth.js
+// auth.js (Updated)
 
 document.addEventListener('DOMContentLoaded', () => {
     const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbw9OKBW9joSM_4piyZ8Y0sZ54tXr21_Ir7xyiNzowYxFw48gY63Yc9VRqhUFfFIM1e4/exec"; // <-- REPLACE with your Web App URL
@@ -6,6 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ---------------- Utilities ---------------- */
     function el(id) { return document.getElementById(id) }
     function showMsg(text, ok = true) { const m = el('msg'); m.textContent = text; m.style.color = ok ? 'lightgreen' : '#ffb4b4' }
+    
+    /**
+     * NEW: Email validation function
+     */
+    function isValidEmail(email) {
+        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return regex.test(email);
+    }
 
     function genSalt(len = 16) {
         const arr = crypto.getRandomValues(new Uint8Array(len));
@@ -54,6 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = el('username').value.trim();
 
         if (!email || !password) { showMsg('Please enter email & password', false); return; }
+
+        /**
+         * NEW: Added email validation check
+         */
+        if (!isValidEmail(email)) {
+            showMsg('Please enter a valid email address', false);
+            return;
+        }
 
         if (mode === 'signup') {
             if (!name) { showMsg('Please enter your full name', false); return; }
